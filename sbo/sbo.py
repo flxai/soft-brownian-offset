@@ -4,8 +4,11 @@
 import numpy as np
 
 from sklearn.metrics import pairwise_distances
+from tqdm import tqdm
 
-def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, softness=False, hs_scale=None, random_state=None):
+
+def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, softness=False, hs_scale=None,
+                         random_state=None):
     if random_state is not None:
         np.random.seed(random_state)
     n_dim = X.shape[1]
@@ -34,6 +37,7 @@ def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, soft
             y += gaussian_hyperspheric_offset(1, n_dim=n_dim, hs_scale=hs_scale)[0] * d_off
         ys.append(np.array(y))
     return np.array(ys)
+
 
 # Inspired by https://stackoverflow.com/a/33977530/10484131
 def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3, hs_scale=None):
