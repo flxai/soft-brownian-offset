@@ -1,12 +1,13 @@
 # soft-brownian-offset
 Soft Brownian Offset (SBO) defines an iterative approach to translate points by a most likely distance from a given dataset.
 
-![demonstration](assets/sbo-demo.svg)
+## Paper
 
-## Source
-
+The technique is described in detail within the paper **TBA**. For citations please see ["How to cite"](#cite)
 
 ## Demonstration
+
+![demonstration](assets/sbo-demo.svg)
 
 The following code creates the plot seen above:
 
@@ -54,26 +55,40 @@ noise = .08
 show_progress = False
 alpha = .6
 
-n_val = 3
-d_min = np.linspace(.25, .45, n_val)
-softness = np.linspace(0, 1, n_val)
-fig, ax = plt.subplots(n_val, n_val, sharex=True, sharey=True, figsize=(8.5, 9))
+n_colrow = 3
+d_min = np.linspace(.25, .45, n_colrow)
+softness = np.linspace(0, 1, n_colrow)
+fig, ax = plt.subplots(n_colrow, n_colrow, sharex=True, sharey=True, figsize=(8.5, 9))
 
 X, _ = make_moons(n_samples=n_samples_id, noise=noise)
 for i, (d_min_, softness_) in enumerate(itertools.product(d_min, softness)):
-    xy = i // n_val, i % n_val
+    xy = i // n_colrow, i % n_colrow
     d_off_ = d_min_ * .7
     ax[xy].set_title(f"$d^- = {d_min_:.2f}\ d^+ = {d_off_:.2f}\ \sigma = {softness_}$")
     if softness_ == 0:
         softness_ = False
     y = soft_brownian_offset(X, d_min_, d_off_, n_samples=n_samples_ood, softness=softness_, show_progress=show_progress)
     plot_data(X, y, ax=ax[xy])
-    if i // n_val == len(d_min) - 1:
+    if i // n_colrow == len(d_min) - 1:
         ax[xy].set_xlabel("$x_1$")
-    if i % n_val == 0:
+    if i % n_colrow == 0:
         ax[xy].set_ylabel("$x_2$")
-ax[0, n_val - 1].legend(loc='upper right')
+ax[0, n_colrow - 1].legend(loc='upper right')
 
 plt.tight_layout()
 plt.savefig('assets/sbo-demo.svg')
 ```
+
+## Cite
+
+Please cite SBO in your paper if it helps your research **TBA**:
+
+```
+@article{name2020sbo,
+  Author = {TBA},
+  Journal = {arXiv preprint arXiv:TBA},
+  Title = {TBA},
+  Year = {2020}
+}
+```
+
