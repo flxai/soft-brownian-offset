@@ -1,7 +1,7 @@
 # soft-brownian-offset
 Soft Brownian Offset (SBO) defines an iterative approach to translate points by a most likely distance from a given dataset.
 
-![demonstration](assets/sbo-demo.png)
+![demonstration](assets/sbo-demo.svg)
 
 ## Source
 
