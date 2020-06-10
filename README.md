@@ -1,9 +1,19 @@
 # soft-brownian-offset
 Soft Brownian Offset (SBO) defines an iterative approach to translate points by a most likely distance from a given dataset.
 
-## Paper
+## Background
 
-The technique is described in detail within the paper **TBA**. For citations please see ["How to cite"](#cite)
+The technique is described in detail within the paper **TBA**. For citations please see [*cite*](#cite).
+
+## Installation
+
+This project is hosted on [PyPI](https://pypi.org/project/sbo/) and can therefore be installed easily through `pip`:
+
+```
+pip install sbo
+```
+
+Dependending on your setup you may need to add `--user` after the `install`.
 
 ## Demonstration
 
