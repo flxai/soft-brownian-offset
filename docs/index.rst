@@ -25,6 +25,7 @@ Installation
 This project is hosted on `PyPI <https://pypi.org/project/sbo/>` and can therefore be installed easily through ``pip``:
 
 .. code-block::
+
   pip install sbo
 
 Dependending on your setup you may need to add ``--user`` after the install.
@@ -50,7 +51,9 @@ Parameter overview
 
 The following plot gives an overview of possible choices for ``d_min`` (:math:`d^-`), ``d_off`` (:math:`d^+`) and ``softness`` (:math:`\sigma`):
 
-TODO Add image
+.. image:: assets/sbo-demo.svg
+   :width: 600
+   :alt: Plot of parameter overview
 
 It was created using the following Python code:
 
@@ -121,16 +124,14 @@ It was created using the following Python code:
   ax[0, n_colrow - 1].legend(loc='upper right')
 
   plt.tight_layout()
-  plt.savefig('assets/sbo-demo.svg')
+  plt.show()
 
 
 Gaussian Hyperspheric Offset
 ----------------------------
 
-GHO is the basis for SBO and assumes :math:`\bm{X}\sim\mathcal{N}`.
+GHO is the basis for SBO and assumes :math:`\pbm{X}\sim\mathcal{N}`.
 To generate OOD Samples using GHO, the following lines suffice:
-
-Test :math:`\bm{X} \boldsymbol{X} \pmb{X}`
 
 .. code-block:: python
   :linenos:
