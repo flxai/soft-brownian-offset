@@ -11,6 +11,6 @@ setup(
     project_urls={
         'Source Code': github_url,
         'Bug Tracker': f'{github_url}/issues',
-        'Documentation': 'https://sbo.readthedocs.io',
+        'Documentation': 'https://soft-brownian-offset.readthedocs.io',
     },
 )
