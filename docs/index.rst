@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+********************
 Soft Brownian Offset
-====================
+********************
 
 .. toctree::
    :maxdepth: 2
@@ -12,7 +13,7 @@ Soft Brownian Offset
 
 
 Introduction
-------------
+============
 
 Soft Brownian Offset (SBO) defines an iterative approach to translate points by a most likely distance from a given dataset.
 It can be used for generating out-of-distribution (OOD) samples.
@@ -20,7 +21,7 @@ It is based on Gaussian Hyperspheric Offset (GHO), which is also included in thi
 
 
 Installation
-------------
+============
 
 This project is hosted on `PyPI <https://pypi.org/project/sbo/>` and can therefore be installed easily through ``pip``:
 
@@ -32,7 +33,7 @@ Dependending on your setup you may need to add ``--user`` after the install.
 
 
 Usage
------
+=====
 
 For brevity's sake here's a short introduction to the library's usage:
 
@@ -47,7 +48,7 @@ For brevity's sake here's a short introduction to the library's usage:
 
 
 Parameter overview
-------------------
+==================
 
 The following plot gives an overview of possible choices for ``d_min`` (:math:`d^-`), ``d_off`` (:math:`d^+`) and ``softness`` (:math:`\sigma`):
 
@@ -128,7 +129,7 @@ It was created using the following Python code:
 
 
 Gaussian Hyperspheric Offset
-----------------------------
+============================
 
 GHO is the basis for SBO and assumes :math:`\pbm{X}\sim\mathcal{N}`.
 To generate OOD Samples using GHO, the following lines suffice:
