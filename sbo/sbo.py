@@ -1,10 +1,20 @@
 # Soft Brownian Offset
-# (c) 2020 Felix Möller
+# (c) 2020-2021 Felix Möller
 
 import numpy as np
 
 from sklearn.metrics import pairwise_distances
 from tqdm import tqdm
+
+
+__author__ = "Felix Möller"
+__copyright__ = "Copyright 2020-2021, Felix Möller"
+__credits__ = ["Felix Möller"]
+__license__ = "AGPLv2"
+__version__ = "0.0.7"
+__maintainer__ = "Felix Möller"
+__email__ = "felix.moeller@helmholtz-berlin.de"
+__status__ = "Development"
 
 
 def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, softness=False, hs_scale=None,
