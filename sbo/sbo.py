@@ -17,7 +17,7 @@ __email__ = "felix.moeller@helmholtz-berlin.de"
 __status__ = "Development"
 
 
-def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, softness=False, hs_scale=None,
+def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, softness=False,
                          random_state=None):
     """Generates OOD samples using SBO on the input X and returns n_samples number of samples constrained by
     other parameters.
@@ -60,13 +60,13 @@ def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, soft
                     raise ValueError("Softness should be float greater zero")
             if skip:
                 break
-            y += gaussian_hyperspheric_offset(1, n_dim=n_dim, hs_scale=hs_scale)[0] * d_off
+            y += gaussian_hyperspheric_offset(1, n_dim=n_dim)[0] * d_off
         ys.append(np.array(y))
     return np.array(ys)
 
 
 # Inspired by https://stackoverflow.com/a/33977530/10484131
-def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3, hs_scale=None):
+def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3):
     """Generates OOD samples using GHO and returns n_samples number of samples constrained by other
     parameters.
 
@@ -84,6 +84,4 @@ def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3, hs_scale=None
     vec /= np.linalg.norm(vec, axis=0)
     vec *= np.random.normal(loc=mu, scale=std, size=n_samples)
     vec = vec.T
-    if hs_scale is not None:
-        return vec * hs_scale.std(axis=0) + hs_scale.mean(axis=0)
     return vec
