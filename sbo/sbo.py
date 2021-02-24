@@ -18,7 +18,7 @@ def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, soft
         iterator = tqdm(iterator)
     for i in iterator:
         # Sample uniformly from X
-        y = X[np.random.choice(len(X))].astype(float)
+        y = np.random.choice(X)
         # Move out of reach of other points
         skip = False
         while True:
