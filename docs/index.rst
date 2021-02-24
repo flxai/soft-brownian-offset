@@ -15,21 +15,46 @@ Introduction
 ------------
 
 Soft Brownian Offset (SBO) defines an iterative approach to translate points by a most likely distance from a given dataset.
-It can be used for generating out-of-distribution samples.
+It can be used for generating out-of-distribution (OOD) samples.
+It is based on Gaussian Hyperspheric Offset (GHO), which is also included in this package (see below-  :ref:`Gaussian Hyperspheric Offset`).
 
-It is based on Gaussian Hyperspheric Offset, which is also included in this package (see `below <#gaussian-hyperspheric-offset>`).
+
+Installation
+------------
+
+This project is hosted on `PyPI <https://pypi.org/project/sbo/>` and can therefore be installed easily through ``pip``:
+
+.. code-block::
+  pip install sbo
+
+Dependending on your setup you may need to add ``--user`` after the install.
+
+
+Usage
+-----
+
+For brevity's sake here's a short introduction to the library's usage:
+
+.. code-block:: python
+  :linenos:
+
+  from sklearn.datasets import make_moons
+  from sbo import soft_brownian_offset
+
+  X, _ = make_moons(n_samples=60, noise=.08)
+  X_ood = soft_brownian_offset(X, d_min=.35, d_off=.24, n_samples=120, softness=0)
 
 
 Parameter overview
 ------------------
 
-The following plot gives an overview of possible choices for `d_min` (:math:`d^-``), `d_off` (:math:`d^+`) and `softness` (:math:`\sigma`):
+The following plot gives an overview of possible choices for ``d_min`` (:math:`d^-`), ``d_off`` (:math:`d^+`) and ``softness`` (:math:`\sigma`):
 
 TODO Add image
 
 It was created using the following Python code:
 
-.. code-block:: javascript
+.. code-block:: python
   :linenos:
 
   #!/usr/bin/env python3
@@ -43,7 +68,7 @@ It was created using the following Python code:
   from matplotlib import cm
   from sklearn.datasets import make_moons
 
-  from sbo import soft_brownian_offset, gaussian_hyperspheric_offset
+  from sbo import soft_brownian_offset
 
   plt.rc('text', usetex=True)
 
@@ -97,4 +122,21 @@ It was created using the following Python code:
 
   plt.tight_layout()
   plt.savefig('assets/sbo-demo.svg')
+
+
+Gaussian Hyperspheric Offset
+----------------------------
+
+GHO is the basis for SBO and assumes :math:`\bm{X}\sim\mathcal{N}`.
+To generate OOD Samples using GHO, the following lines suffice:
+
+.. code-block:: python
+  :linenos:
+
+  from sklearn.datasets import make_moons
+  from sbo import soft_brownian_offset, gaussian_hyperspheric_offset
+
+  X, _ = make_moons(n_samples=60, noise=.08)
+  X_ood = gaussian_hyperspheric_offset(X, d_min=.35, d_off=.24, n_samples=120, softness=0)
+
 
