@@ -19,6 +19,22 @@ __status__ = "Development"
 
 def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, softness=False, hs_scale=None,
                          random_state=None):
+    """Generates OOD samples using SBO on the input X and returns n_samples number of samples constrained by
+    other parameters.
+
+    Args:
+        X (:obj:`numpy.array`): In-distribution (ID) data to form OOD samples around. First dimension contains samples
+        d_min (float): (Likely) Minimum distance to ID data
+        d_off (float): Offset distance used in each iteration
+        n_samples(int): Number of samples to return
+        show_progress(boolean): Whether to show a tqdm progress bar
+        softness(float): Describes softness of minimum distance. Parameter between 0 (hard) and 1 (soft)
+        random_state(int): RNG state used for reproducibility
+
+    Returns:
+        :obj:`numpy.array`:
+            Out of distribution samples of shape (n_samples, X.shape[1])
+    """
     if random_state is not None:
         np.random.seed(random_state)
     n_dim = X.shape[1]
@@ -51,6 +67,19 @@ def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, soft
 
 # Inspired by https://stackoverflow.com/a/33977530/10484131
 def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3, hs_scale=None):
+    """Generates OOD samples using GHO and returns n_samples number of samples constrained by other
+    parameters.
+
+    Args:
+        n_samples(int): Number of samples to return
+        mu (float): Mean of distribution
+        std (float): Standard deviation of distribution
+        n_dim (int): Number of dimensions
+
+    Returns:
+        :obj:`numpy.array`:
+            Out of distribution samples of shape (n_samples, n_dim)
+    """
     vec = np.random.randn(n_dim, n_samples)
     vec /= np.linalg.norm(vec, axis=0)
     vec *= np.random.normal(loc=mu, scale=std, size=n_samples)
