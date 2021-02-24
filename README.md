@@ -34,7 +34,7 @@ The technique is described in detail within the paper **TBA**. For citations ple
 
 See the following plot to gain intuition on the approach's results:
 
-![demonstration](assets/sbo-demo.svg)
+![demonstration](docs/img/sbo-demo.svg)
 
 Please see the [documentation](https://soft-brownian-offset.readthedocs.io/en/latest/#demonstration) for the source code to recreate the plot.
 

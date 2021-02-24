@@ -51,7 +51,7 @@ Parameter overview
 
 The following plot gives an overview of possible choices for ``d_min`` (:math:`d^-`), ``d_off`` (:math:`d^+`) and ``softness`` (:math:`\sigma`):
 
-.. image:: assets/sbo-demo.svg
+.. image:: img/sbo-demo.svg
    :width: 600
    :alt: Plot of parameter overview
 
