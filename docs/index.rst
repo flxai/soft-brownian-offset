@@ -131,7 +131,7 @@ It was created using the following Python code:
 Gaussian Hyperspheric Offset
 ============================
 
-GHO is the basis for SBO and assumes :math:`\pbm{X}\sim\mathcal{N}`.
+GHO is the basis for SBO and assumes :math:`\pmb{X}\sim\mathcal{N}`.
 To generate OOD Samples using GHO, the following lines suffice:
 
 .. code-block:: python
