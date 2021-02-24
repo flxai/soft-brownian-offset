@@ -23,7 +23,7 @@ It is based on Gaussian Hyperspheric Offset (GHO), which is also included in thi
 Installation
 ============
 
-This project is hosted on `PyPI <https://pypi.org/project/sbo/>` and can therefore be installed easily through ``pip``:
+This project is hosted on :ref:`PyPI <https://pypi.org/project/sbo/>` and can therefore be installed easily through ``pip``:
 
 .. code-block::
 
