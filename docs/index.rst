@@ -16,7 +16,7 @@ Introduction
 
 Soft Brownian Offset (SBO) defines an iterative approach to translate points by a most likely distance from a given dataset.
 It can be used for generating out-of-distribution (OOD) samples.
-It is based on Gaussian Hyperspheric Offset (GHO), which is also included in this package (see below-  :ref:`Gaussian Hyperspheric Offset`).
+It is based on Gaussian Hyperspheric Offset (GHO), which is also included in this package (see :ref:`below <Gaussian Hyperspheric Offset>`).
 
 
 Installation
@@ -129,6 +129,8 @@ Gaussian Hyperspheric Offset
 
 GHO is the basis for SBO and assumes :math:`\bm{X}\sim\mathcal{N}`.
 To generate OOD Samples using GHO, the following lines suffice:
+
+Test :math:`\bm{X} \boldsymbol{X} \pmb{X}`
 
 .. code-block:: python
   :linenos:
