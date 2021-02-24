@@ -66,7 +66,7 @@ def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, soft
 
 
 # Inspired by https://stackoverflow.com/a/33977530/10484131
-def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3):
+def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3, random_state=None):
     """Generates OOD samples using GHO and returns n_samples number of samples constrained by other
     parameters.
 
@@ -75,11 +75,14 @@ def gaussian_hyperspheric_offset(n_samples, mu=4, std=.7, n_dim=3):
         mu (float): Mean of distribution
         std (float): Standard deviation of distribution
         n_dim (int): Number of dimensions
+        random_state(int): RNG state used for reproducibility
 
     Returns:
         :obj:`numpy.array`:
             Out of distribution samples of shape (n_samples, n_dim)
     """
+    if random_state is not None:
+        np.random.seed(random_state)
     vec = np.random.randn(n_dim, n_samples)
     vec /= np.linalg.norm(vec, axis=0)
     vec *= np.random.normal(loc=mu, scale=std, size=n_samples)
