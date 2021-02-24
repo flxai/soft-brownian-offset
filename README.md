@@ -16,8 +16,10 @@ Dependending on your setup you may need to add `--user` after the `install`.
 
 For brevity's sake here's a short introduction to the library's usage:
 
-```
+```python
 from sklearn.datasets import make_moons
+from sbo import soft_brownian_offset
+
 X, _ = make_moons(n_samples=60, noise=.08)
 X_ood = soft_brownian_offset(X, d_min=.35, d_off=.24, n_samples=120, softness=0)
 ```
