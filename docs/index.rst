@@ -139,7 +139,7 @@ The following code's result displays the shortcomings if the assumption does not
 
   from sklearn.datasets import make_moons
   from sbo import soft_brownian_offset, gaussian_hyperspheric_offset
-  
+
   X, _ = make_moons(n_samples=60, noise=.08)
   X_ood = (gaussian_hyperspheric_offset(n_samples=220, mu=2, std=.3, n_dim=X.ndim) + X.mean()) * X.std()
 
