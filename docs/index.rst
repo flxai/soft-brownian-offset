@@ -132,15 +132,14 @@ Gaussian Hyperspheric Offset
 ============================
 
 GHO is the basis for SBO and assumes :math:`\pmb{X}\sim\mathcal{N}`.
-To generate OOD Samples using GHO, the following lines suffice:
+The following code's result displays the shortcomings if the assumption does not hold:
 
 .. code-block:: python
   :linenos:
 
   from sklearn.datasets import make_moons
   from sbo import soft_brownian_offset, gaussian_hyperspheric_offset
-
+  
   X, _ = make_moons(n_samples=60, noise=.08)
-  X_ood = gaussian_hyperspheric_offset(X, d_min=.35, d_off=.24, n_samples=120, softness=0)
-
+  X_ood = (gaussian_hyperspheric_offset(n_samples=220, mu=2, std=.3, n_dim=X.ndim) + X.mean()) * X.std()
 
