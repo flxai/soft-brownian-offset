@@ -28,7 +28,9 @@ For more details please see the [documentation](https://soft-brownian-offset.rea
 
 ## Background
 
-The technique is described in detail within the paper **TBA**. For citations please see [*cite*](#cite).
+The technique allows for trivial OOD generation -- as shown above -- or more complex schemes that apply the transformation of learned representations.
+For an in-depth look at the latter please refer to the paper that is also [available as a pre-print on arXiv](https://arxiv.org/abs/2105.02965).
+For citations please see [*cite*](#cite).
 
 ## Demonstration
 
@@ -40,15 +42,14 @@ Please see the [documentation](https://soft-brownian-offset.readthedocs.io/en/la
 
 ## Cite
 
-Please cite SBO in your paper if it helps your research **TBA**:
+Please cite SBO in your paper if it helps your research:
 
 ```
-@article{name2020sbo,
-  Author = {TBA},
-  Journal = {arXiv preprint arXiv:TBA},
-  Title = {TBA},
-  Year = {2020}
+@inproceedings{MBH21,
+  author    = {Möller, Felix and Botache, Diego and Huseljic, Denis and Heidecker, Florian and Bieshaar, Maarten and Sick, Bernhard},
+  booktitle = {{Proc. of CVPR SAIAD Workshop}},
+  title     = {{Out-of-distribution Detection and Generation using Soft Brownian Offset Sampling and Autoencoders}},
+  year      = 2021
 }
 ```
-
 
