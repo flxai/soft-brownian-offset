@@ -44,7 +44,7 @@ Please see the [documentation](https://soft-brownian-offset.readthedocs.io/en/la
 
 Please cite SBO in your paper if it helps your research:
 
-```
+```bibtex
 @inproceedings{MBH21,
   author    = {Möller, Felix and Botache, Diego and Huseljic, Denis and Heidecker, Florian and Bieshaar, Maarten and Sick, Bernhard},
   booktitle = {{Proc. of CVPR SAIAD Workshop}},
