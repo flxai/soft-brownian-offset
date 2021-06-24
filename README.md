@@ -29,7 +29,7 @@ For more details please see the [documentation](https://soft-brownian-offset.rea
 ## Background
 
 The technique allows for trivial OOD generation -- as shown above -- or more complex schemes that apply the transformation of learned representations.
-For an in-depth look at the latter please refer to the paper that is also [as open access from the CVF](https://openaccess.thecvf.com/content/CVPR2021W/SAIAD/papers/Moller_Out-of-Distribution_Detection_and_Generation_Using_Soft_Brownian_Offset_Sampling_and_CVPRW_2021_paper.pdf).
+For an in-depth look at the latter please refer to the paper that is available [as open access from the CVF](https://openaccess.thecvf.com/content/CVPR2021W/SAIAD/papers/Moller_Out-of-Distribution_Detection_and_Generation_Using_Soft_Brownian_Offset_Sampling_and_CVPRW_2021_paper.pdf).
 For citations please see [*cite*](#cite).
 
 ## Demonstration
