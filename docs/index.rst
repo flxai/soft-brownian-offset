@@ -47,6 +47,14 @@ For brevity's sake here's a short introduction to the library's usage:
   X_ood = soft_brownian_offset(X, d_min=.35, d_off=.24, n_samples=120, softness=0)
 
 
+Background
+==========
+
+The technique allows for trivial OOD generation -- as shown above -- or more complex schemes that apply the transformation of learned representations.
+For an in-depth look at the latter please refer to the paper that is also :ref:`as open access from the CVF <https://openaccess.thecvf.com/content/CVPR2021W/SAIAD/papers/Moller_Out-of-Distribution_Detection_and_Generation_Using_Soft_Brownian_Offset_Sampling_and_CVPRW_2021_paper.pdf>`.
+For citations please see :ref:`cite <Cite>`.
+
+
 Parameter overview
 ==================
 
@@ -142,4 +150,19 @@ The following code's result displays the shortcomings if the assumption does not
 
   X, _ = make_moons(n_samples=60, noise=.08)
   X_ood = (gaussian_hyperspheric_offset(n_samples=220, mu=2, std=.3, n_dim=X.ndim) + X.mean()) * X.std()
+
+
+Cite
+====
+
+Please cite SBO in your paper if it helps your research:
+
+.. code-block::
+
+  @inproceedings{MBH21,
+    author    = {Möller, Felix and Botache, Diego and Huseljic, Denis and Heidecker, Florian and Bieshaar, Maarten and Sick, Bernhard},
+    booktitle = {{Proc. of CVPR SAIAD Workshop}},
+    title     = {{Out-of-distribution Detection and Generation using Soft Brownian Offset Sampling and Autoencoders}},
+    year      = 2021
+  }
 
