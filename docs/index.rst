@@ -23,7 +23,7 @@ It is based on Gaussian Hyperspheric Offset (GHO), which is also included in thi
 Installation
 ============
 
-This project is hosted on :ref:`PyPI <https://pypi.org/project/sbo/>` and can therefore be installed easily through ``pip``:
+This project is hosted on `PyPI <https://pypi.org/project/sbo/>`_ and can therefore be installed easily through ``pip``:
 
 .. code-block::
 
@@ -51,7 +51,7 @@ Background
 ==========
 
 The technique allows for trivial OOD generation -- as shown above -- or more complex schemes that apply the transformation of learned representations.
-For an in-depth look at the latter please refer to the paper that is available :ref:`as open access from the CVF <https://openaccess.thecvf.com/content/CVPR2021W/SAIAD/papers/Moller_Out-of-Distribution_Detection_and_Generation_Using_Soft_Brownian_Offset_Sampling_and_CVPRW_2021_paper.pdf>`.
+For an in-depth look at the latter please refer to the paper that is available `as open access from the CVF <https://openaccess.thecvf.com/content/CVPR2021W/SAIAD/papers/Moller_Out-of-Distribution_Detection_and_Generation_Using_Soft_Brownian_Offset_Sampling_and_CVPRW_2021_paper.pdf>`_.
 For citations please see :ref:`cite <Cite>`.
 
 
