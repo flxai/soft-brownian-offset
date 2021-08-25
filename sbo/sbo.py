@@ -35,6 +35,8 @@ def soft_brownian_offset(X, d_min, d_off, n_samples=1, show_progress=False, soft
         :obj:`numpy.array`:
             Out of distribution samples of shape (n_samples, X.shape[1])
     """
+    if softness == 0:
+        softness = False
     if random_state is not None:
         np.random.seed(random_state)
     n_dim = X.shape[1]
