@@ -79,7 +79,7 @@ jobs:
           python-version: 3.8
           architecture: x64
       - name: Download dist
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: dist
       - name: Install twine
